@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rappi_clon/data/repositories/categories_repository.dart';
 import 'package:rappi_clon/domain/controllers/home/home_controller.dart';
 import 'package:rappi_clon/domain/controllers/prelogin/prelogin_controller.dart';
 import 'package:rappi_clon/ui/pages/home/home_page.dart';
@@ -8,12 +7,7 @@ import 'package:rappi_clon/ui/pages/prelogin/prelogin_page.dart';
 import 'package:rappi_clon/ui/theme/app_theme.dart';
 
 void main() {
-  setupLocator();
   runApp(const MyApp());
-}
-
-void setupLocator() {
-  Get.lazyPut(() => CategoriesRepository());
 }
 
 class MyApp extends StatelessWidget {
