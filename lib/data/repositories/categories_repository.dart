@@ -8,7 +8,7 @@ class CategoriesRepository implements AbstractCategories {
       Category(
         icon: 'burger',
         name: 'Restaurant',
-        route: 'route',
+        route: '/restaurants',
       ),
       Category(
         icon: 'pharmacy',

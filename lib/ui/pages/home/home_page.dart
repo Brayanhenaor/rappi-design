@@ -4,16 +4,25 @@ import 'package:rappi_clon/data/repositories/categories_repository.dart';
 import 'package:rappi_clon/domain/controllers/home/home_controller.dart';
 import 'package:rappi_clon/ui/pages/home/widgets/categories.dart';
 import 'package:rappi_clon/ui/widgets/bottom_nav_bar.dart';
+import 'package:rappi_clon/ui/widgets/custom_drawer.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
+
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _key,
       extendBody: true,
-      bottomNavigationBar: const BottomNavBar(),
+      bottomNavigationBar: Builder(
+        builder: (context) => BottomNavBar(
+          openDrawer: _key.currentState?.openDrawer ?? () => {},
+        ),
+      ),
       backgroundColor: Colors.white,
+      drawer: const CustomDrawer(),
       body: GetBuilder<HomeController>(
         builder: (controller) => Center(
           child: Padding(

@@ -201,7 +201,7 @@ class PreloginPage extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 8),
                           child: ElevatedButton(
-                            onPressed: () => Get.toNamed('/home'),
+                            onPressed: () => Get.offAllNamed('/home'),
                             style: ElevatedButton.styleFrom(
                               shape: const StadiumBorder(),
                               primary: Colors.grey[900],

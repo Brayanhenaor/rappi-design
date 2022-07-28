@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rappi_clon/domain/controllers/home/home_controller.dart';
 import 'package:rappi_clon/domain/controllers/prelogin/prelogin_controller.dart';
+import 'package:rappi_clon/domain/controllers/restaurants/resturants_controller.dart';
 import 'package:rappi_clon/ui/pages/home/home_page.dart';
 import 'package:rappi_clon/ui/pages/prelogin/prelogin_page.dart';
+import 'package:rappi_clon/ui/pages/restaurants/restaurants_page.dart';
 import 'package:rappi_clon/ui/theme/app_theme.dart';
 
 void main() {
@@ -37,13 +39,27 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/home',
           transition: Transition.circularReveal,
-          page: () => const HomePage(),
+          page: () => HomePage(),
           binding: BindingsBuilder(
             () {
-              Get.lazyPut<HomeController>(() => HomeController());
+              Get.lazyPut<HomeController>(
+                () => HomeController(),
+              );
             },
           ),
         ),
+        GetPage(
+          transition: Transition.downToUp,
+          name: '/restaurants',
+          page: () => const RestaurantsPage(),
+          binding: BindingsBuilder(
+            () {
+              Get.lazyPut<RestaurantsController>(
+                () => RestaurantsController(),
+              );
+            },
+          ),
+        )
       ],
     );
   }
