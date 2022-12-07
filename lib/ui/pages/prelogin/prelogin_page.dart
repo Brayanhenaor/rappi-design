@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 
 class PreloginPage extends StatelessWidget {
   const PreloginPage({Key? key}) : super(key: key);
@@ -37,6 +39,7 @@ class PreloginPage extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: const [
+                      
                         Image(
                           height: 20,
                           image: AssetImage('assets/colombia_flag.png'),

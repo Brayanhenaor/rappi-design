@@ -18,14 +18,14 @@ class BottomNavBar extends StatelessWidget {
             onTap: openDrawer,
             icon: Icons.menu,
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           BottomNavItem(
             onTap: () => {},
             icon: Icons.discount_outlined,
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           BottomNavItem(
@@ -63,7 +63,7 @@ class BottomNavItem extends StatelessWidget {
             BoxShadow(
               color: Colors.blue.withOpacity(0.2),
               blurRadius: 10,
-              offset: Offset(0, 8),
+              offset: const Offset(0, 8),
             ),
           ],
         ),

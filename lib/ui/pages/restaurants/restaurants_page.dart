@@ -5,6 +5,7 @@ import 'package:rappi_clon/domain/controllers/restaurants/resturants_controller.
 import 'package:rappi_clon/ui/pages/restaurants/widgets/order_types.dart';
 import 'package:rappi_clon/ui/pages/restaurants/widgets/search.dart';
 import 'package:rappi_clon/ui/theme/colors.dart';
+import 'package:rappi_clon/ui/widgets/appbar_back_leading.dart';
 
 class RestaurantsPage extends StatelessWidget {
   const RestaurantsPage({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class RestaurantsPage extends StatelessWidget {
           actions: const [
             _AppBarActions(),
           ],
-          leading: const _AppBarLeading(),
+          leading: const AppBarLeading(),
           backgroundColor: Colors.white,
           elevation: 0,
           title: const _AppBarTitle(),
@@ -146,32 +147,6 @@ class _AppBarTitle extends StatelessWidget {
         SizedBox(width: 5),
         Icon(Icons.arrow_drop_down, color: Colors.orange, size: 28),
       ],
-    );
-  }
-}
-
-class _AppBarLeading extends StatelessWidget {
-  const _AppBarLeading({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      onPressed: () {
-        Get.back();
-      },
-      icon: Container(
-        padding: const EdgeInsets.all(5),
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.grey[200],
-        ),
-        child: const Icon(
-          Icons.arrow_back_outlined,
-          color: Colors.black,
-        ),
-      ),
     );
   }
 }

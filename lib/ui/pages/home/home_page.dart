@@ -59,36 +59,39 @@ class _RappiCardButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        vertical: 10,
-        horizontal: 20,
-      ),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 15,
-            offset: Offset(0, 5),
-          ),
-        ],
-      ),
-      child: Row(
-        children: const [
-          Expanded(
-            child: Image(
-              alignment: Alignment.center,
-              height: 30,
-              image: AssetImage('assets/RappiCard.png'),
+    return GestureDetector(
+      onTap: () => Get.toNamed('/rappicardhome'),
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          vertical: 10,
+          horizontal: 20,
+        ),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 15,
+              offset: Offset(0, 5),
             ),
-          ),
-          Icon(
-            Icons.keyboard_arrow_right_outlined,
-            color: Colors.black,
-          )
-        ],
+          ],
+        ),
+        child: Row(
+          children: const [
+            Expanded(
+              child: Image(
+                alignment: Alignment.center,
+                height: 30,
+                image: AssetImage('assets/RappiCard.png'),
+              ),
+            ),
+            Icon(
+              Icons.keyboard_arrow_right_outlined,
+              color: Colors.black,
+            )
+          ],
+        ),
       ),
     );
   }

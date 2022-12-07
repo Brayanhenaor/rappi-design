@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rappi_clon/domain/controllers/home/home_controller.dart';
 import 'package:rappi_clon/domain/controllers/prelogin/prelogin_controller.dart';
+import 'package:rappi_clon/domain/controllers/rappicard/rappi_card_home_controller.dart';
 import 'package:rappi_clon/domain/controllers/restaurants/resturants_controller.dart';
 import 'package:rappi_clon/ui/pages/home/home_page.dart';
 import 'package:rappi_clon/ui/pages/prelogin/prelogin_page.dart';
+import 'package:rappi_clon/ui/pages/rappicard/rappi_card_home_page.dart';
 import 'package:rappi_clon/ui/pages/restaurants/restaurants_page.dart';
 import 'package:rappi_clon/ui/theme/app_theme.dart';
 
@@ -56,6 +58,18 @@ class MyApp extends StatelessWidget {
             () {
               Get.lazyPut<RestaurantsController>(
                 () => RestaurantsController(),
+              );
+            },
+          ),
+        ),
+        GetPage(
+          transition: Transition.downToUp,
+          name: '/rappicardhome',
+          page: () => const RappiCardHomePage(),
+          binding: BindingsBuilder(
+            () {
+              Get.lazyPut<RappiCardHomeController>(
+                () => RappiCardHomeController(),
               );
             },
           ),
